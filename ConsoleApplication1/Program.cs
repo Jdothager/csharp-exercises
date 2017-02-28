@@ -14,18 +14,34 @@ namespace Area
             double radius;
             double area;
             string result;
+            bool repeat = true;
 
-            // get user input for radius
-            Console.WriteLine("What is the radius of your circle?");
-            radius = float.Parse(Console.ReadLine());
+            while (repeat)
+            {
+                // get user input for radius
+                Console.WriteLine("What is the radius of your circle?");
+                radius = double.Parse(Console.ReadLine());
 
-            // calculate area
-            area = 3.14 * radius * radius;
+                // calculate area
+                area = 3.14 * radius * radius;
 
-            // return result
-            result = String.Format("The area of your circle is: {0}", area);
-            Console.WriteLine(result);
-            Console.ReadLine();
+                // return result
+                result = String.Format("The area of your circle is: {0}", area);
+                Console.WriteLine(result);
+
+                // ask to repeat
+                Console.WriteLine("again?");
+                string answer = Console.ReadLine();
+
+                if (answer == "yes")
+                {
+                    repeat = true;
+                }
+                else
+                {
+                    repeat = false;
+                }
+            }
         }
     }
 }
