@@ -9,7 +9,21 @@ namespace Quiz
     {
         public static void PrintTheQuestion(Question item)
         {
-            Console.WriteLine(item.QuestionText + "\nChoose all that are correct: \n");
+            string text;
+            if (item is CheckboxQuestion)
+            {
+                text = "\nChoose all that are correct: \n";
+            }
+            if (item is MultipleQuestion)
+            {
+                text = "\nChoose the correct option: \n";
+            }
+            else
+            {
+                text = "\nChoose: True or False\n";
+            }
+
+            Console.WriteLine(item.QuestionText + text);
             foreach (string option in item.Options)
             {
                 Console.WriteLine(option);

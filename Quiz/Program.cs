@@ -10,7 +10,7 @@ namespace Quiz
         public static void Main(string[] args)
         {
             CheckboxQuestion q1 = new CheckboxQuestion("Is this working?", new List<string> { "yes" }, new List<string> { "yes", "no" }, new List<string>());
-            CheckboxQuestion q2 = new CheckboxQuestion("Is this still working?", new List<string> { "yes" }, new List<string> { "yes", "no" }, new List<string>());
+            MultipleQuestion q2 = new MultipleQuestion("Is this still working?", new List<string> { "yes" }, new List<string> { "yes", "no" }, new List<string>());
 
             Quiz quiz1 = new Quiz(q1);
             quiz1.AddQuestion(q2);
